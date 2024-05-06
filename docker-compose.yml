@@ -1,0 +1,15 @@
+version: "3"
+services:
+  rails_psql:
+    image: postgres
+    environment:
+      POSTGRES_DB: rails_db
+      POSTGRES_USER: rails
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    restart: always
+    ports:
+      - "5432:5432"
+volumes:
+  postgres_volume:
